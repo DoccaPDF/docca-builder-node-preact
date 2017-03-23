@@ -1,0 +1,75 @@
+{
+  "name": "docca-invoice",
+  "version": "0.0.1",
+  "description": "render an invoice as a Docca document",
+  "main": "dist/index.js",
+  "author": "jason@docca.io",
+  "license": "MIT",
+  "scripts": {
+    "clean:dist": "rm -rf dist/",
+    "compile:dist": "babel src/ --out-dir dist/ --source-maps true",
+    "compile": "npm run clean:dist && npm run compile:dist",
+    "start": "node dist/index.js",
+    "dev": "babel-node src/index.js",
+    "demo": "babel-node bin/demo.js",
+    "demo:long": "babel-node bin/demo-long.js"
+  },
+  "dependencies": {
+    "axios": "^0.15.3",
+    "babel-cli": "^6.16.0",
+    "babel-core": "^6.17.0",
+    "babel-eslint": "^7.0.0",
+    "babel-jest": "^19.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.16.0",
+    "babel-preset-es2015-node6": "^0.4.0",
+    "babel-watch": "^2.0.3",
+    "eslint": "^3.8.1",
+    "eslint-config-standard": "^7.1.0",
+    "eslint-config-standard-preact": "^1.0.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^2.1.1",
+    "jest": "^19.0.2",
+    "lodash": "^4.17.4",
+    "preact": "^7.2.0",
+    "preact-render-to-string": "^3.6.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015-node6"
+    ],
+    "plugins": [
+      "transform-object-rest-spread",
+      ["babel-plugin-transform-react-jsx", { "pragma":"h" }]
+    ]
+  },
+  "devDependencies": {
+    "babel-plugin-transform-react-jsx": "^6.23.0"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": [
+      "standard",
+      "standard-preact"
+    ],
+    "env": {
+      "jest": true
+    },
+    "rules": {
+      "curly": [
+        "error",
+        "all"
+      ],
+      "brace-style": [
+        "error",
+        "1tbs"
+      ],
+      "semi": [
+        "error",
+        "always",
+        {
+          "omitLastInOneLineBlock": true
+        }
+      ]
+    }
+  }
+}
