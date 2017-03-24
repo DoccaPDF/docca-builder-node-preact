@@ -12,25 +12,13 @@
     "start": "node dist/index.js",
     "dev": "babel-node src/index.js",
     "demo": "babel-node bin/demo.js",
-    "demo:long": "babel-node bin/demo-long.js"
+    "demo:long": "babel-node bin/demo-long.js",
+    "lint": "eslint ./src"
   },
   "dependencies": {
     "axios": "^0.15.3",
-    "babel-cli": "^6.16.0",
-    "babel-core": "^6.17.0",
-    "babel-eslint": "^7.0.0",
-    "babel-jest": "^19.0.0",
-    "babel-plugin-transform-object-rest-spread": "^6.16.0",
-    "babel-preset-es2015-node6": "^0.4.0",
-    "babel-watch": "^2.0.3",
-    "eslint": "^3.8.1",
-    "eslint-config-standard": "^7.1.0",
-    "eslint-config-standard-preact": "^1.0.1",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^2.1.1",
-    "jest": "^19.0.2",
     "lodash": "^4.17.4",
-    "preact": "^7.2.0",
+    "preact": "^7.2.1",
     "preact-render-to-string": "^3.6.0"
   },
   "babel": {
@@ -39,11 +27,30 @@
     ],
     "plugins": [
       "transform-object-rest-spread",
-      ["babel-plugin-transform-react-jsx", { "pragma":"h" }]
+      [
+        "babel-plugin-transform-react-jsx",
+        {
+          "pragma": "h"
+        }
+      ]
     ]
   },
   "devDependencies": {
-    "babel-plugin-transform-react-jsx": "^6.23.0"
+    "babel-cli": "^6.16.0",
+    "babel-core": "^6.17.0",
+    "babel-eslint": "^7.2.1",
+    "babel-jest": "^19.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.16.0",
+    "babel-plugin-transform-react-jsx": "^6.23.0",
+    "babel-preset-es2015-node6": "^0.4.0",
+    "babel-watch": "^2.0.3",
+    "eslint": "^3.18.0",
+    "eslint-config-standard": "^7.1.0",
+    "eslint-config-standard-preact": "^1.0.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^6.10.3",
+    "eslint-plugin-standard": "^2.1.1",
+    "jest": "^19.0.2"
   },
   "eslintConfig": {
     "parser": "babel-eslint",
