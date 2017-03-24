@@ -46,45 +46,15 @@ const defaultStyle = `
   }
 `;
 
-const InvoiceItems = ({ invoice, style = defaultStyle, className = 'items' }) => {
-  const format = _defaults({}, invoice.currency_format, {
-    locales: 'en-US',
-    options: {
-      style: 'currency',
-      currency: 'USD'
-    }
-  });
-  const dollars = new Intl.NumberFormat(format.locales, format.options);
-
-  const items = invoice.items.map(item => {
-    return {
-      ...item,
-      total: item.price * item.quantity
-    };
-  });
-  const subtotal = _sumBy(items, 'total');
-  const taxAmount = subtotal * invoice.tax_percent / 100;
-  const amountDue = subtotal + taxAmount;
-  const totals = { subtotal, taxAmount, amountDue };
-
-  items.forEach(item => {
-    item.price = dollars.format(item.price / 100);
-    item.total = dollars.format(item.total / 100);
-  });
-  _forEach(totals, (value, key) => {
-    totals[key] = dollars.format(value / 100);
-  });
-
-  return (
-    <column class='{className}'>
-      <style>{style}</style>
-      <InvoiceItemsHeader className='itemsHeader' />
-      <InvoiceItemsList className='itemsList' items={items} />
-      <row class='totals'>
-        <InvoiceItemTotals className='itemTotals' invoice={invoice} totals={totals} />
-      </row>
-    </column>
-  );
-};
+const InvoiceItems = ({ invoice, items, totals, style = defaultStyle, className = 'items' }) => (
+  <column class='{className}'>
+    <style>{style}</style>
+    <InvoiceItemsHeader className='itemsHeader' />
+    <InvoiceItemsList className='itemsList' items={items} />
+    <row class='totals'>
+      <InvoiceItemTotals className='itemTotals' invoice={invoice} totals={totals} />
+    </row>
+  </column>
+);
 
 export default InvoiceItems;
