@@ -61,11 +61,17 @@ const invoice = {
   ],
   currency: "AUD",
   tax_name: "GST",
-  tax_percent: 10
+  tax_percent: 10,
+  tax_note: "The invoice amount is not subject to GST because the supply of services provided by a non-resident entity from outside of Australia is not connected with Australia.",
+  payment_note: "You will be automatically charged for the amount due. No action is required on your part."
 };
 
+if (!process.env.DOCCA_API_KEY) {
+  console.log('Please set your Docca API Key in console env. `$ export DOCCA_API_KEY=apikey_yourApiKey`');
+  process.exit();
+}
 const writeStream = fs.createWriteStream('./demo-invoice-long.pdf');
-const apiKey = 'apikey_5827993c42c54d268555d7d74a900d6f';
+const apiKey = process.env.DOCCA_API_KEY;
 
 makePDF({ invoice, writeStream, apiKey })
 .then(() => console.log('Complete!'))

@@ -4,10 +4,11 @@ import { h } from 'preact';
 
 import Invoice from './components/invoice';
 
+const DOCCA_API_URL = process.env.DOCCA_API_URL || `https://api.docca.io/`;
+
 function agent ({ writeStream, apiKey }) {
   const ua = axios.create({
-    // baseURL: 'https://api.docca.io/',
-    baseURL: 'http://dev-api.docca.io/',
+    baseURL: DOCCA_API_URL,
     timeout: 5000,
     auth: { username: apiKey, password: '' },
     responseType: 'stream'
