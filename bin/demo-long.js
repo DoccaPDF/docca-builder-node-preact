@@ -74,5 +74,5 @@ const writeStream = fs.createWriteStream('./demo-invoice-long.pdf');
 const apiKey = process.env.DOCCA_API_KEY;
 
 makePDF({ invoice, writeStream, apiKey })
-.then(() => console.log('Complete!'))
-.catch(error => console.log(error));
+.then(console.log)
+.catch(console.error);
