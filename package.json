@@ -16,10 +16,10 @@
     "lint": "eslint ./src"
   },
   "dependencies": {
-    "axios": "^0.15.3",
     "lodash": "^4.17.4",
     "preact": "^7.2.1",
-    "preact-render-to-string": "^3.6.0"
+    "preact-render-to-string": "^3.6.0",
+    "request": "^2.81.0"
   },
   "babel": {
     "presets": [
