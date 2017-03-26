@@ -6,16 +6,23 @@
   "author": "jason@docca.io",
   "license": "MIT",
   "scripts": {
+    "prepublish": "npm run compile",
+    "start": "NODE_ENV=development babel-watch src/index.js | bunyan --output short",
+    "serve": "node lib/index.js",
     "clean:dist": "rm -rf dist/",
     "compile:dist": "babel src/ --out-dir dist/ --source-maps true",
     "compile": "npm run clean:dist && npm run compile:dist",
-    "start": "node dist/index.js",
-    "dev": "babel-node src/index.js",
-    "demo": "babel-node bin/demo.js",
-    "demo:long": "babel-node bin/demo-long.js",
-    "lint": "eslint ./src"
+    "lint": "eslint ./src",
+    "demo:invoice": "babel-node bin/demo-invoice.js",
+    "demo:invoice:long": "babel-node bin/demo-invoice-long.js",
+    "demo:invoice:nologo": "babel-node bin/demo-invoice-nologo.js"
   },
   "dependencies": {
+    "body-parser": "^1.17.1",
+    "bunyan": "^1.8.9",
+    "bunyan-request-logger": "^1.1.0",
+    "copin": "^0.0.6",
+    "express": "^4.15.2",
     "lodash": "^4.17.4",
     "preact": "^7.2.1",
     "preact-render-to-string": "^3.6.0",

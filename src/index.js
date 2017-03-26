@@ -1,32 +1,33 @@
-import fs from 'fs';
-import request from 'request';
-import render from 'preact-render-to-string';
-import { h } from 'preact';
+import express from 'express';
+import bodyParser from 'body-parser';
+import requestLogger from 'bunyan-request-logger';
+import bunyan from 'bunyan';
+import Copin from 'copin';
 
-import Invoice from './components/invoice';
+import initRoutes from './routes';
 
-const DOCCA_API_URL = (process.env.DOCCA_API_URL.replace(/\/+$/, '') || `https://api.docca.io`);
+const config = Copin();
+const apiUrl = config.get('docca.api_url').replace(/\/+$/, '');
+const apiKey = config.get('docca.api_key');
 
-export default function generatePDF ({ invoice, writeStream, apiKey }) {
-  const imageStream = fs.createReadStream(`./image/${invoice.supplier.logo}`);
-  const doc = render(<Invoice invoice={invoice} />);
+const serverName = config.get('server.name');
 
-  const req = {
-    url: `${DOCCA_API_URL}/render/document`,
-    auth: { user: apiKey },
-    timeout: 10000,
-    formData: {
-      src: doc,
-      image: [ imageStream ]
-    }
-  };
+const log = bunyan.createLogger({
+  name: serverName,
+  level: config.get('server.log_level')
+});
+const requestLog = requestLogger({ name: `${serverName}-request` });
 
-  return new Promise((resolve, reject) =>
-    request.post(req, (error, response, body) => {
-      if (error) {
-        return reject(error);
-      }
-      resolve(response.statusMessage);
-    }).pipe(writeStream)
-  );
+function startExpress (app) {
+  const serverPort = config.get('server.port');
+  app.listen(serverPort, () => log.info(`listening at ${serverPort}`));
 }
+
+const app = express();
+app.enable('trust proxy');
+app.use(requestLog.requestLogger());
+app.use(bodyParser.json({ limit: config.get('express.json_body_parser.limit') }));
+
+initRoutes({ app, log, apiUrl, apiKey });
+
+startExpress(app);

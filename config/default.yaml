@@ -1,0 +1,11 @@
+---
+server:
+  name: docca-template
+  port: 8008
+  log_level: debug
+express:
+  json_body_parser:
+    limit: 1mb
+docca:
+  api_url: https://api.docca.io
+  api_key: ''
