@@ -1,7 +1,8 @@
 /* eslint-disable quotes */
 
 import fs from 'fs';
-import makePDF from '../src/index';
+import request from 'request';
+import Copin from 'copin';
 
 const invoice = {
   number: "987654321",
@@ -66,13 +67,19 @@ const invoice = {
   payment_note: "You will be automatically charged for the amount due. No action is required on your part."
 };
 
-if (!process.env.DOCCA_API_KEY) {
-  console.log('Please set your Docca API Key in console env. `$ export DOCCA_API_KEY=apikey_yourApiKey`');
-  process.exit();
-}
-const writeStream = fs.createWriteStream('./demo-invoice-long.pdf');
-const apiKey = process.env.DOCCA_API_KEY;
+const config = Copin();
 
-makePDF({ invoice, writeStream, apiKey })
-.then(console.log)
-.catch(console.error);
+const writeStream = fs.createWriteStream('./demo-invoice-long.pdf');
+
+const requestProps = {
+  url: `http://localhost:${config.server.port}/invoice`,
+  timeout: 10000,
+  json: true,
+  body: { invoice }
+};
+
+request.post(requestProps, (error, response, body) => {
+  if (error) {
+    return console.error(error);
+  }
+}).pipe(writeStream);
