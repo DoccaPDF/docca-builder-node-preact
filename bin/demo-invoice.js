@@ -48,7 +48,7 @@ const config = Copin();
 const writeStream = fs.createWriteStream('./demo-invoice.pdf');
 
 const requestProps = {
-  url: `http://localhost:${config.server.port}/invoice`,
+  url: `http://localhost:${config.server.port}/invoice-local-logo`,
   timeout: 10000,
   json: true,
   body: { invoice }
