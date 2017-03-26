@@ -3,7 +3,7 @@ import _defaults from 'lodash/defaults';
 import _mapValues from 'lodash/mapValues';
 import _sumBy from 'lodash/sumBy';
 
-import Header from '../header/logo-and-address';
+import Header from '../header/name-and-address';
 import Footer from '../footer/page-numbers';
 import Address from '../address';
 import InvoiceDetails from './details';

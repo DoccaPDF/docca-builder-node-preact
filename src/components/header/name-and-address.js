@@ -11,6 +11,8 @@ const defaultStyle = `
   }
   .items-right { align-items: right }
   .logo { width: 200 }
+
+  .supplierName { font-size: 40 }
 `;
 
 const LogoAddressHeader = ({ supplier, style = defaultStyle }) => (
@@ -18,7 +20,8 @@ const LogoAddressHeader = ({ supplier, style = defaultStyle }) => (
     <style>{style}</style>
     <row>
       <column>
-        <img class='logo' src={supplier.logo} />
+        {supplier.logo && <img class='logo' src={supplier.logo} />}
+        {!supplier.logo && <p class='supplierName'>{supplier.name}</p>}
       </column>
       <column class='header-supplier'>
         <Address className='items-right' recipient={supplier} />
