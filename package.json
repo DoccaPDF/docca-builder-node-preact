@@ -1,7 +1,7 @@
 {
-  "name": "docca-invoice",
+  "name": "docca-builder",
   "version": "0.0.1",
-  "description": "render an invoice as a Docca document",
+  "description": "renders Docca markup documents with data and converts to PDF using the Docca server",
   "main": "dist/index.js",
   "author": "jason@docca.io",
   "license": "MIT",
