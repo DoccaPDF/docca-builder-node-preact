@@ -1,27 +1,17 @@
 import { h } from 'preact';
 
 const defaultStyle = `
-  .logo {
-    font-size: 40;
-    padding: 20;
-    margin: 20;
-    width: 150;
-  }
-
-  .title {
-    font-size: 20;
-    margin: 0 0 0 30;
-    valign: bottom;
-  }
+  logo { width: 150 }
+  title { valign: bottom; font-size: 20; padding: 0 0 5 20 }
+  co { height: stretch }
 `;
 
 const Header = ({ style = defaultStyle }) => (
   <header>
     <style>{style}</style>
     <ro>
-      <co>
-        <text class='logo'>Docca </text><text class='title'> Markup Reference</text>
-      </co>
+      <logo><img src='logo.png' /></logo>
+      <co><title>Markup Reference</title></co>
     </ro>
   </header>
 );
