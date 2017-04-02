@@ -8,7 +8,7 @@ const defaultStyle = `
 const PageNumbers = ({ style = defaultStyle }) => (
   <pageNo>
     <style>{style}</style>
-    Page <text class='pageNo'>3</text> of <text class='pagesNo'>3</text>
+    Page <text class='pageNo'>999</text> of <text class='pagesNo'>999</text>
   </pageNo>
 );
 

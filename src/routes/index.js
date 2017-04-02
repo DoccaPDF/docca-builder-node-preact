@@ -5,6 +5,7 @@ import { h } from 'preact';
 import { renderDocument } from '../docca-client';
 
 import Invoice from '../components/invoice';
+import MarkupReference from '../components/docca/markup-reference';
 
 export default function initRoutes ({ app, log, apiUrl, apiKey, timeout }) {
   app.post('/invoice', (req, res) => {
@@ -12,6 +13,13 @@ export default function initRoutes ({ app, log, apiUrl, apiKey, timeout }) {
     const invoice = req.body.invoice;
     const doc = render(<Invoice invoice={invoice} />);
     renderDocument({ apiUrl, apiKey, doc, timeout, res });
+  });
+
+  app.get('/markup-reference', (req, res) => {
+    const doc = render(<MarkupReference />);
+    console.log({ doc });
+    const images = [fs.createReadStream(`./demo/images/logo.png`)];
+    renderDocument({ apiUrl, apiKey, doc, images, timeout, res });
   });
 
   app.post('/invoice-demo-logo', (req, res) => {

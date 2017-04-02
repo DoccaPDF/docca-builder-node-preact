@@ -38,6 +38,11 @@ curl --data "@./demo/data/invoice-nologo.json" \
   http://localhost:8008/invoice > invoice-nologo-demo.pdf
 ```
 
+The following command will generate the Docca Markup Reference.
+```
+curl http://localhost:8008/markup-reference > docca-markup-reference.pdf
+```
+
 If you log in to Docca, go to Template Editor -> Images you can upload an image
 to your account. Upload an image called `logo.png` and run the following command.
 Only the invoice data will be posted to Docca but the image referenced in the
