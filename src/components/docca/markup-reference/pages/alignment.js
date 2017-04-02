@@ -5,18 +5,19 @@ import Pre from '../pre';
 import EG from '../eg';
 
 const style = `
-  .decor {
-    border: 1; border-color: red; margin: 5; padding: 3;
-    width: 50%;
-  }
+    .decor {
+      border: 1; border-color: red; margin: 5; padding: 3;
+      width: 50%;
+    }
 
-  .right { align: right }
-  .center { align: center }
-  .items-right { align-items: right }
-  .items-center { align-items: center }
+    .right { align: right }
+    .center { align: center }
+    .items-right { align-items: right }
+    .items-center { align-items: center }
 `;
 
 const eg = `
+
   <co class="mar">
     <ro class="decor"> Row </ro>
     <ro class="decor right items-right"> Row </ro>
@@ -26,6 +27,7 @@ const eg = `
 `;
 
 const eg2 = `
+
   <co>
     <co class="decor"> Column </co>
     <co class="decor right items-right"> Column </co>
@@ -34,17 +36,19 @@ const eg2 = `
   </co>
 `;
 
+const preStyle = `<style>${style}</style>`;
+
 const Alignment = () => (
   <newPage id='alignment'>
     <style>{style}</style>
     <Header>Alignment</Header>
     <p>Elements can be aligned and they can align their child elements.</p>
     <block>
-      <Pre>{style}{eg}</Pre>
+      <Pre>{preStyle}{eg}</Pre>
       <EG>{eg}</EG>
     </block>
     <block>
-      <Pre>{style}{eg2}</Pre>
+      <Pre>{preStyle}{eg2}</Pre>
       <EG>{eg2}</EG>
     </block>
   </newPage>

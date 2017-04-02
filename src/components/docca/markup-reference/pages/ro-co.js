@@ -4,38 +4,39 @@ import Header from '../page-header';
 import Pre from '../pre';
 import EG from '../eg';
 
-const style = `
-  tag { flow: column; font-size: 12 }
-  heading { font-size: 20; font-weight: bold }
-  subHeading { extend: heading; font-size: 14 }
-`;
-
 const ro = `
-        <ro>
-          <co> Column </co>
-          <co> Column </co>
-          <co> Column </co>
-        </ro>
+  <ro>
+    <co> <p>Column 1 Para 1</p> <p>Column 1 Para 2</p> </co>
+    <co> <p>Column 2</p> </co>
+    <co> <p>Column 3</p> </co>
+  </ro>
 `;
 
 const co = `
-        <co>
-          <ro> Row </ro>
-          <ro> Row </ro>
-          <ro> Row </ro>
-        </co>
+  <co>
+    <ro> <p>Row 1 Para 1</p> <p>Row 1 Para 2</p> </ro>
+    <ro> <p>Row 2</p> </ro>
+    <ro> <p>Row 3</p> </ro>
+  </co>
 `;
 
 const RoCo = () => (
   <newPage id='roAndCo'>
-    <style>{style}</style>
     <Header>Rows and Columns (ro & co)</Header>
-    <p>The elements in a row are laid out horizontally and the available space is divided up evenly between the elements.</p>
-    <Pre>{ro}</Pre>
-    <EG>{ro}</EG>
-    <p>The elements in a column are laid out vertically.</p>
-    <Pre>{co}</Pre>
-    <EG>{co}</EG>
+    <block>
+      <subhead>Rows</subhead>
+      &lt;row&gt; and &lt;ro&gt; elements are styled by default with the `flow: row` rule.
+      <p>The elements in a row are laid out horizontally and the available space is divided up evenly between the elements.</p>
+      <Pre>{ro}</Pre>
+      <EG>{ro}</EG>
+    </block>
+    <block>
+      <subhead>Columns</subhead>
+      &lt;column&gt; and &lt;co&gt; elements are styled by default with the `flow: column` rule.
+      <p>The elements in a column are laid out vertically.</p>
+      <Pre>{co}</Pre>
+      <EG>{co}</EG>
+    </block>
   </newPage>
 );
 
