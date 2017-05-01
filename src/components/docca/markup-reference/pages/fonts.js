@@ -27,7 +27,7 @@ const eg = `
 const preStyle = `<style>${style}</style>`;
 
 const Fonts = () => (
-  <newPage id='fonts'>
+  <sub-page index='Fonts'>
     <style>{style}</style>
     <Header>Fonts</Header>
     <block>
@@ -44,7 +44,7 @@ const Fonts = () => (
         <p>Vietnamese: Thậm chí tạm thời nibh, luctus ut urna sed, ultricies ultrices Purus.</p>
       </co>
     </co>
-  </newPage>
+  </sub-page>
 );
 
 export default Fonts;

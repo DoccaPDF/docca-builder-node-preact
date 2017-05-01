@@ -23,7 +23,7 @@ const eg = `
 const preStyle = `<style>${style}</style>`;
 
 const Images = () => (
-  <newPage id='images'>
+  <sub-page index='Images'>
     <style>{style}</style>
     <Header>Images</Header>
     <p>Images fill the available width of their container element unless their width is set directly.</p>
@@ -33,7 +33,7 @@ const Images = () => (
       <Pre>{preStyle}{eg}</Pre>
       <EG>{eg}</EG>
     </block>
-  </newPage>
+  </sub-page>
 );
 
 export default Images;

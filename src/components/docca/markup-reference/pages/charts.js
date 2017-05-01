@@ -106,7 +106,7 @@ const preStyle = `<style>${style}</style>`;
 const preStyle2 = `<style>${style2}</style>`;
 
 const Charts = () => (
-  <newPage id='charts'>
+  <sub-page index='Charts'>
     <Header>Charts</Header>
     <p>Not really, but..</p>
     <block>
@@ -121,7 +121,7 @@ const Charts = () => (
       <Pre>{preStyle2}{eg2}</Pre>
       <EG>{eg2}</EG>
     </block>
-  </newPage>
+  </sub-page>
 );
 
 export default Charts;

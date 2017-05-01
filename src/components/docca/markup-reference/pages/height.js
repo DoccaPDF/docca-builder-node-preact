@@ -31,7 +31,7 @@ const eg2 = `
 const preStyle = `<style>${style}</style>`;
 
 const Height = () => (
-  <newPage id='height'>
+  <sub-page index='Height'>
     <style>{style}</style>
     <Header>Height</Header>
     <block>
@@ -44,7 +44,7 @@ const Height = () => (
       <Pre>{preStyle}{eg2}</Pre>
       <EG>{eg2}</EG>
     </block>
-  </newPage>
+  </sub-page>
 );
 
 export default Height;

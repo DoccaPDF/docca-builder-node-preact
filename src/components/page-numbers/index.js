@@ -1,15 +1,12 @@
 import { h } from 'preact';
 
-const defaultStyle = `
-  .pageNo { content: page_number }
-  .pagesNo { content: total_pages }
-`;
+const defaultStyle = ``;
 
 const PageNumbers = ({ style = defaultStyle }) => (
-  <pageNo>
+  <page-numbers content='page-numbers'>
     <style>{style}</style>
-    Page <text class='pageNo'>999</text> of <text class='pagesNo'>999</text>
-  </pageNo>
+    Page <span content='page-number'>999</span> of <span content='total-pages'>999</span>
+  </page-numbers>
 );
 
 export default PageNumbers;

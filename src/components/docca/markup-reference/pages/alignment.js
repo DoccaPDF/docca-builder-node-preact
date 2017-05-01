@@ -39,7 +39,7 @@ const eg2 = `
 const preStyle = `<style>${style}</style>`;
 
 const Alignment = () => (
-  <newPage id='alignment'>
+  <sub-page index='Alignment'>
     <style>{style}</style>
     <Header>Alignment</Header>
     <p>Elements can be aligned and they can align their child elements.</p>
@@ -51,7 +51,7 @@ const Alignment = () => (
       <Pre>{preStyle}{eg2}</Pre>
       <EG>{eg2}</EG>
     </block>
-  </newPage>
+  </sub-page>
 );
 
 export default Alignment;

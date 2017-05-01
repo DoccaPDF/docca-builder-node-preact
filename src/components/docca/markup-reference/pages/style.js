@@ -22,7 +22,7 @@ const eg = `
 const preStyle = `<style>${style}</style>`;
 
 const Style = () => (
-  <newPage id='style'>
+  <sub-page index='Style'>
     <style>{style}</style>
     <Header>Style</Header>
     <p>Styles control most of the layout of a document. There are some special tags which cannot be emulated with styles though.</p>
@@ -30,7 +30,7 @@ const Style = () => (
     <p>Styles can be extended unlike regular CSS.</p>
     <Pre>{preStyle}{eg}</Pre>
     <EG>{eg}</EG>
-  </newPage>
+  </sub-page>
 );
 
 export default Style;

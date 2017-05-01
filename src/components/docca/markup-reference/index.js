@@ -1,11 +1,11 @@
 import { h } from 'preact';
-import _map from 'lodash/map';
-import _padStart from 'lodash/padStart';
+
+import { getPDFInfoDate } from '../../../dates';
 
 import Header from './header';
 import Footer from './footer';
 
-import Index from './pages/index';
+import IndexPage from '../../index-page';
 import Document from './pages/document';
 import Style from './pages/style';
 import Pages from './pages/pages';
@@ -19,20 +19,30 @@ import Images from './pages/images';
 import Charts from './pages/charts';
 
 const defaultStyle = `
-  page { margin: 20 }
+  page { margin: 40 }
+  .index { margin: 50 }
   p { margin: 0 0 5 0 }
+  header { font-weight: bold; font-size: 14; margin: 0 0 5 0 }
   subhead { font-weight: bold; font-size: 11; margin: 0 0 5 0 }
   .index { margin: 20; font-size: 12 }
+  .index-container {
+    border: 0; border-color: red;
+  }
+  .index-page-row {
+    border: 0 0 1 0; border-color: lightgrey;
+    padding: 5;
+  }
+  .index-page-number-row {
+    align-items: right
+  }
+  .index-mark-row {
+    border: 0; border-color: orange;
+    padding: 2 2 2 10;
+  }
+  page-numbers {
+    align-items: right
+  }
 `;
-
-function getDate (date) {
-  const parts = _map(['Date', 'Hours', 'Minutes', 'Seconds'], part =>
-    _padStart(date[`getUTC${part}`](), 2, '0')
-  );
-  parts.unshift(_padStart(date.getUTCMonth() + 1, 2, '0'));
-  parts.unshift(date.getUTCFullYear());
-  return `${parts.join('')}Z`;
-}
 
 /**
  * Docca Markup Guide
@@ -46,12 +56,15 @@ const MarkupRef = ({ style = defaultStyle }) => {
       subject='Reference for Docca document markup'
       creator='Docca'
       keywords='docca document markup reference'
-      moddate={getDate(new Date())}
+      moddate={getPDFInfoDate(new Date())}
     >
       <style>{style}</style>
+      <index>
+        <Header />
+        <IndexPage />
+      </index>
       <page>
         <Header />
-        <Index />
         <Document />
         <Style />
         <Pages />
@@ -68,18 +81,5 @@ const MarkupRef = ({ style = defaultStyle }) => {
     </doc>
   );
 };
-
-        // <Index />
-        // <Document />
-        // <Style />
-        // <Pages />
-        // <RowsColumns />
-        // <Spacing />
-        // <Width />
-        // <Height />
-        // <Alignment />
-        // <Fonts />
-        // <Images />
-        // <Charts />
 
 export default MarkupRef;

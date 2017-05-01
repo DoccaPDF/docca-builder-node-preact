@@ -16,7 +16,7 @@ const Footer = ({ style = defaultStyle }) => (
     <ro>
       <co>
         <p>Docca Markup Reference</p>
-        Questions? email <text href='mailto:support@docca.io'>support@docca.io</text>
+        Questions? email <span href='mailto:support@docca.io'>support@docca.io</span>
       </co>
       <co class='pages'>
         <PageNumbers />

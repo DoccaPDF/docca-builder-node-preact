@@ -36,7 +36,7 @@ const preStyle1 = `<style>${style1}</style>`;
 const preStyle2 = `<style>${style2}</style>`;
 
 const Spacing = () => (
-  <newPage id='spacing'>
+  <sub-page index='Spacing'>
     <Header>Borders, Margins, and Padding</Header>
     <p>A border is an outline of an element. </p>
     <p>A margin adds space around the outside of the border.</p>
@@ -51,7 +51,7 @@ const Spacing = () => (
       <Pre>{preStyle2}{eg2}</Pre>
       <EG>{eg2}</EG>
     </co>
-  </newPage>
+  </sub-page>
 );
 
 export default Spacing;

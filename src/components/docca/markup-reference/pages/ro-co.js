@@ -21,7 +21,7 @@ const co = `
 `;
 
 const RoCo = () => (
-  <newPage id='roAndCo'>
+  <sub-page index='Rows and Columns'>
     <Header>Rows and Columns (ro & co)</Header>
     <block>
       <subhead>Rows</subhead>
@@ -37,7 +37,7 @@ const RoCo = () => (
       <Pre>{co}</Pre>
       <EG>{co}</EG>
     </block>
-  </newPage>
+  </sub-page>
 );
 
 export default RoCo;

@@ -21,7 +21,7 @@ const pre = `
         <page>
           <header>
             <ro>
-              <logo><img src="docca-logo-550.png" /></logo>
+              <logo><img src="logo.png" /></logo>
               <co class="title">Markup Reference</co>
             </ro>
           </header>
@@ -36,7 +36,7 @@ const pre = `
           <footer>
             <ro>
               <co>Docca Markup Reference</co>
-              <co>Page <text class="pageNo">3</text> of <text class="pagesNo">3</text></co>
+              <co>Page <span class="pageNo">3</span> of <span class="pagesNo">3</span></co>
             </ro>
           </footer>
         </page>
@@ -44,11 +44,11 @@ const pre = `
 `;
 
 const Document = () => (
-  <newPage id='theDocument'>
+  <sub-page index='The Document'>
     <Header>The Document</Header>
     <p>A Docca document consists of a doc block containing a style block and one or more page blocks.</p>
     <Pre>{pre}</Pre>
-  </newPage>
+  </sub-page>
 );
 
 export default Document;
