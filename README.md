@@ -71,3 +71,8 @@ curl --data "@./demo/data/invoice-long.json" \
   http://localhost:8765/invoice-demo-logo > invoice-long-demo.pdf
 ```
 
+```
+curl --data "@./demo/data/chargify-statement.json" \
+  -H "Content-Type: application/json" \
+  http://localhost:8765/chargify-statement > chargify-statement.pdf
+```

@@ -11,8 +11,6 @@ const config = Copin();
 const apiUrl = config.get('docca.api_url').replace(/\/+$/, '');
 const apiKey = config.get('docca.api_key');
 
-console.log({ DOCCA_API_URL: process.env['DOCCA_API_URL'], apiUrl });
-
 const serverName = config.get('server.name');
 
 const log = bunyan.createLogger({
