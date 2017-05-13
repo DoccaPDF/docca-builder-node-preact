@@ -3,4 +3,6 @@ dist/
 .DS_Store
 *.pdf
 !sample-pdfs/*.pdf
-config/local.yaml
+config/local*
+yarn-offline-*
+docker-compose.override.yml
