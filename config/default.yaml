@@ -1,7 +1,7 @@
 ---
 server:
   name: docca-builder
-  port: 8008
+  port: 8000
   log_level: debug
 express:
   json_body_parser:

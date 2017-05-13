@@ -1,0 +1,7 @@
+---
+server:
+  port: DOCCA_BUILDER_PORT
+docca:
+  api_url: DOCCA_API_URL
+  api_key: DOCCA_API_KEY
+

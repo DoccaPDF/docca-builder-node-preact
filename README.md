@@ -35,12 +35,12 @@ account.
 ```
 curl --data "@./demo/data/invoice-nologo.json" \
   -H "Content-Type: application/json" \
-  http://localhost:8008/invoice > invoice-nologo-demo.pdf
+  http://localhost:8765/invoice > invoice-nologo-demo.pdf
 ```
 
 The following command will generate the Docca Markup Reference.
 ```
-curl http://localhost:8008/markup-reference > docca-markup-reference.pdf
+curl http://localhost:8765/markup-reference > docca-markup-reference.pdf
 ```
 
 If you log in to Docca, go to Template Editor -> Images you can upload an image
@@ -50,7 +50,7 @@ document will be found in your account and included in the PDF.
 ```
 curl --data "@./demo/data/invoice.json" \
   -H "Content-Type: application/json" \
-  http://localhost:8008/invoice > invoice-customlogo-demo.pdf
+  http://localhost:8765/invoice > invoice-customlogo-demo.pdf
 ```
 
 The following two use a modified endpoint which will post the demo image along
@@ -63,11 +63,11 @@ a document when required.
 ```
 curl --data "@./demo/data/invoice.json" \
   -H "Content-Type: application/json" \
-  http://localhost:8008/invoice-demo-logo > invoice-logo-demo.pdf
+  http://localhost:8765/invoice-demo-logo > invoice-logo-demo.pdf
 ```
 ```
 curl --data "@./demo/data/invoice-long.json" \
   -H "Content-Type: application/json" \
-  http://localhost:8008/invoice-demo-logo > invoice-long-demo.pdf
+  http://localhost:8765/invoice-demo-logo > invoice-long-demo.pdf
 ```
 
