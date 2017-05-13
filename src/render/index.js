@@ -1,4 +1,4 @@
-import { objectKeys, encodeEntities, falsey, indent, isLargeString, styleObjToCss, hashToClassName, assign, getNodeProps } from './util';
+import { objectKeys, encodeEntities, falsey, indent, isLargeString, styleObjToCss, hashToClassName, getNodeProps } from './util';
 
 const SHALLOW = { shallow: true };
 
@@ -6,8 +6,6 @@ const SHALLOW = { shallow: true };
 const UNNAMED = [];
 
 const EMPTY = {};
-
-const VOID_ELEMENTS = [];
 
 /** Render Preact JSX + Components to an HTML string.
  * @name render
