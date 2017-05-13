@@ -1,11 +1,12 @@
 
 *
 
+!demo
 !package.json
 !config/
 config/local.yaml
 !src/
 !yarn.lock
 !.yarnrc
-!yarn-offline-cache
+!yarn-offline-mirror
 

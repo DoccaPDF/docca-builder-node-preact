@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  docca-builder:
+    # start the app in watch mode and use local src and config and
+    # automatically restart on any changes
+    command: 'npm start'
+    build:
+      args:
+        yarnMode: ''
+    volumes:
+      - './src:/home/app/src'
+      - './config:/home/app/config'

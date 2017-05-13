@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  docca-builder:
+    build:
+      context: ./
+    image: docca-builder
+    container_name: docca-builder
+    ports:
+      - "8765:8765"
+    environment:
+      DOCCA_BUILDER_PORT: 8765
+      DOCCA_API_URL: https://api.docca.io
+      DOCCA_API_KEY: apikey_replaceThisWithYourApiKey
