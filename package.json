@@ -6,16 +6,14 @@
   "author": "jason@docca.io",
   "license": "MIT",
   "scripts": {
-    "prepublish": "npm run compile",
+    "prepublishOnly": "npm run compile",
     "start": "NODE_ENV=development babel-watch src/index.js | bunyan --output short",
-    "serve": "node lib/index.js",
+    "serve": "node dist/index.js",
     "clean:dist": "rm -rf dist/",
     "compile:dist": "babel src/ --out-dir dist/ --source-maps true",
     "compile": "npm run clean:dist && npm run compile:dist",
     "lint": "eslint ./src",
-    "demo:invoice": "babel-node bin/demo-invoice.js",
-    "demo:invoice:long": "babel-node bin/demo-invoice-long.js",
-    "demo:invoice:nologo": "babel-node bin/demo-invoice-nologo.js"
+    "test": "jest"
   },
   "dependencies": {
     "body-parser": "^1.17.1",
@@ -24,8 +22,7 @@
     "copin": "^0.0.6",
     "express": "^4.15.2",
     "lodash": "^4.17.4",
-    "preact": "^7.2.1",
-    "preact-render-to-string": "^3.6.0",
+    "preact": "^8.1.0",
     "request": "^2.81.0"
   },
   "babel": {
@@ -52,12 +49,19 @@
     "babel-preset-es2015-node6": "^0.4.0",
     "babel-watch": "^2.0.3",
     "eslint": "^3.18.0",
-    "eslint-config-standard": "^7.1.0",
+    "eslint-config-standard": "^10.2.1",
     "eslint-config-standard-preact": "^1.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "^4.2.2",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^6.10.3",
-    "eslint-plugin-standard": "^2.1.1",
+    "eslint-plugin-standard": "^3.0.1",
     "jest": "^19.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "verbose": true,
+    "testPathIgnorePatterns": [ "/node_modules/", "/dist/" ]
   },
   "eslintConfig": {
     "parser": "babel-eslint",
