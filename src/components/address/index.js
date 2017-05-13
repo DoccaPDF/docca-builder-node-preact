@@ -9,12 +9,12 @@ import { h } from 'preact';
  * @param {Array}  recipient.address - lines in the address; street city, etc
  */
 const Address = ({ title, recipient, className }) => {
-  const addr = recipient.address.map(line => <p>{line}</p>);
+  const addr = recipient.address.map(line => <l>{line}</l>);
   return (
     <column class={className}>
       {title && <p class='bold'>{title}</p>}
-      <p>{recipient.name}</p>
-      {recipient.attn && <p>{recipient.attn}</p>}
+      <l>{recipient.name}</l>
+      {recipient.attn && <l>{recipient.attn}</l>}
       {addr}
     </column>
   );

@@ -8,6 +8,7 @@ const defaultStyle = `
   }
   .billDetailLabel { width: 90; }
   footAmountDue {
+    extend: row;
     margin: 5 0 0 0;
     padding: 2 4;
     border: 1;
@@ -23,7 +24,6 @@ const defaultStyle = `
     border: 2 0 0 0;
   }
   amount {
-    extend: p;
     align-items: right;
   }
 `;
@@ -39,13 +39,13 @@ const Final = ({ className, invoice, amountDue, style = defaultStyle }) => (
     {invoice.tax_note && <row>{invoice.tax_note}</row>}
     <billDetail>
       <column>
-        <row><p class='billDetailLabel'>Bill to:</p><p>{invoice.customer.name}</p></row>
-        <row><p class='billDetailLabel'>Billing ID:</p><p>{invoice.billing_id}</p></row>
-        <row><p class='billDetailLabel'>Invoice number:</p><p>{invoice.number}</p></row>
+        <row><l class='billDetailLabel'>Bill to:</l><l>{invoice.customer.name}</l></row>
+        <row><l class='billDetailLabel'>Billing ID:</l><l>{invoice.billing_id}</l></row>
+        <row><l class='billDetailLabel'>Invoice number:</l><l>{invoice.number}</l></row>
       </column>
       <column>
         <footAmountDue>
-          <p>Amount due in {invoice.currency}:</p>
+          <l>Amount due in {invoice.currency}:</l>
           <amount>{amountDue}</amount>
         </footAmountDue>
       </column>

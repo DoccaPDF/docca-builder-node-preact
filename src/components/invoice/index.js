@@ -11,7 +11,7 @@ import Items from './items';
 import Final from './final';
 
 const defaultStyle = `
-  page { margin: 30 }
+  page { margin: 30; font-size: 10 }
   .detail { margin: 10 0 20 0 }
   .bold { font-weight: bold }
   final {
@@ -19,6 +19,7 @@ const defaultStyle = `
     valign: bottom;
   }
   footer { margin: 20 0 0 0 }
+  page-numbers { align-items: right }
 `;
 
 function getFormatter (invoiceCurrencyFormat) {

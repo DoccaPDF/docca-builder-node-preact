@@ -2,7 +2,6 @@ import { h } from 'preact';
 
 const defaultStyle = `
   amount {
-    extend: p;
     align-items: right;
   }
   amountDue {

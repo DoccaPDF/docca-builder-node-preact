@@ -2,7 +2,7 @@ import { h } from 'preact';
 
 const InvoiceItem = ({ item }) => (
   <item>
-    <p>{item.description}</p>
+    <l>{item.description}</l>
     <itemQ>{item.quantity}</itemQ>
     <itemP>{item.price}</itemP>
     <itemT>{item.total}</itemT>

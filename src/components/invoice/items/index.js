@@ -1,9 +1,5 @@
 import { h } from 'preact';
 
-import _defaults from 'lodash/defaults';
-import _forEach from 'lodash/forEach';
-import _sumBy from 'lodash/sumBy';
-
 import InvoiceItemsHeader from './header';
 import InvoiceItemsList from './list';
 import InvoiceItemTotals from './totals';
@@ -21,7 +17,7 @@ const defaultStyle = `
     font-size: 8;
   }
 
-  item { padding: 3 0; }
+  item { flow: row; padding: 3 0; }
   itemQ {
     width: 60;
     align-items: right;

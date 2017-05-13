@@ -5,26 +5,26 @@ import { h } from 'preact';
  */
 const InvoiceDetails = ({ invoice, className, title, titleClass }) => (
   <column class={className}>
-    <p class={titleClass}>{title}</p>
+    <l class={titleClass}>{title}</l>
     <row>
-      <p>Invoice Number:</p>
-      <p>{invoice.number}</p>
+      <l>Invoice Number:</l>
+      <l>{invoice.number}</l>
     </row>
     <row>
-      <p>Issue Date:</p>
-      <p>{invoice.issue_date}</p>
+      <l>Issue Date:</l>
+      <l>{invoice.issue_date}</l>
     </row>
     <row>
-      <p>Payment Terms:</p>
-      <p>{invoice.payment_terms}</p>
+      <l>Payment Terms:</l>
+      <l>{invoice.payment_terms}</l>
     </row>
     <row>
-      <p>Billing ID:</p>
-      <p>{invoice.billing_id}</p>
+      <l>Billing ID:</l>
+      <l>{invoice.billing_id}</l>
     </row>
     <row>
-      <p>Billing Account Number:</p>
-      <p>{invoice.account_number}</p>
+      <l>Billing Account Number:</l>
+      <l>{invoice.account_number}</l>
     </row>
   </column>
 );
