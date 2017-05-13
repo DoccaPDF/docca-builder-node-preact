@@ -4,52 +4,41 @@ import Header from '../page-header';
 import Pre from '../pre';
 import EG from '../eg';
 
-const style1 = `
-    col { extend: co; border: 1; border-color: blue }
-    .radius { border-radius: 5 }
-    .mar { margin: 5 }
-    .pad { padding: 5 }
+const style = `
+  border { border: 1; border-color: blue }
+  margin { border: 1; border-color: red; margin: 5 }
+  padding { border: 1; border-color: green; padding: 5 }
+  bottomBorder { extend: border margin padding; border: 0 0 1 0 }
+  rounded { extend: border margin padding; border-radius: 5 }
 `;
 
-const eg1 = `
+const eg = `
 
-  <ro><col>Border</col></ro>
-  <ro><col class="mar">Margin and Border</col></ro>
-  <ro><col class="mar pad">Margin, Border, Padding</col></ro>
-  <ro><col class="mar radius pad">Margin, Rounded Border, Padding</col></ro>
+<border>Border</border>
+<margin>Margin</margin>
+<padding>Padding</padding>
+
+<margin>
+  <padding>Margin and Padding</padding>
+</margin>
+
+<bottomBorder>Bottom Border</bottomBorder>
+
+<rounded>Rounded Border</rounded>
 `;
 
-const style2 = `
-    .bor { border: 0 0 1 0; border-color: blue }
-    .mar { margin: 5 0 0 0 }
-    .pad { padding: 0 5 }
-`;
-
-const eg2 = `
-
-  <ro><col class="bor">Bottom Border</col></ro>
-  <ro><col class="bor mar">Top Margin and Bottom Border</col></ro>
-  <ro><col class="bor mar pad">Top Margin, Bottom Border, Sides Padding</col></ro>
-`;
-
-const preStyle1 = `<style>${style1}</style>`;
-const preStyle2 = `<style>${style2}</style>`;
+const preStyle = `<style>${style}</style>`;
 
 const Spacing = () => (
   <sub-page index='Spacing'>
     <Header>Borders, Margins, and Padding</Header>
-    <p>A border is an outline of an element. </p>
+    <p>A border is the outline of an element. </p>
     <p>A margin adds space around the outside of the border.</p>
     <p>Padding adds space inside the border.</p>
     <co>
-      <style>{style1}</style>
-      <Pre>{preStyle1}{eg1}</Pre>
-      <EG>{eg1}</EG>
-    </co>
-    <co>
-      <style>{style2}</style>
-      <Pre>{preStyle2}{eg2}</Pre>
-      <EG>{eg2}</EG>
+      <style>{style}</style>
+      <Pre>{preStyle}{eg}</Pre>
+      <EG>{eg}</EG>
     </co>
   </sub-page>
 );

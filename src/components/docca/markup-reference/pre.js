@@ -7,11 +7,22 @@ const style = `
   }
 `;
 
-const Pre = ({ children }) => (
-  <o>
-    <style>{style}</style>
-    <pre dangerouslySetInnerHTML={{ __html: children }} />
-  </o>
-);
+// const Pre = ({ children }) => (
+//   <o>
+//     <style>{style}</style>
+//     <pre dangerouslySetInnerHTML={{ __html: children }} />
+//   </o>
+// );
+
+const Pre = ({ children }) => {
+  const mu = (
+    <o>
+      <style>{style}</style>
+      <pre dangerouslySetInnerHTML={{ __html: children.join('') }} />
+    </o>
+  );
+  // console.log(JSON.stringify({mu}, null, 2));
+  return mu;
+};
 
 export default Pre;
