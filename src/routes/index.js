@@ -1,11 +1,12 @@
 import fs from 'fs';
-import render from 'preact-render-to-string';
 import { h } from 'preact';
 
+import render from '../render';
 import { renderDocument } from '../docca-client';
 
 import Invoice from '../components/invoice';
 import MarkupReference from '../components/docca/markup-reference';
+import ChargifyStatement from '../components/chargify';
 
 export default function initRoutes ({ app, log, apiUrl, apiKey, timeout }) {
   app.post('/invoice', (req, res) => {
@@ -17,7 +18,13 @@ export default function initRoutes ({ app, log, apiUrl, apiKey, timeout }) {
 
   app.get('/markup-reference', (req, res) => {
     const doc = render(<MarkupReference />);
-    console.log({ doc });
+    const images = [fs.createReadStream(`./demo/images/logo.png`)];
+    renderDocument({ apiUrl, apiKey, doc, images, timeout, res });
+  });
+
+  app.post('/chargify-statement', (req, res) => {
+    const data = req.body;
+    const doc = render(<ChargifyStatement data={data} />);
     const images = [fs.createReadStream(`./demo/images/logo.png`)];
     renderDocument({ apiUrl, apiKey, doc, images, timeout, res });
   });

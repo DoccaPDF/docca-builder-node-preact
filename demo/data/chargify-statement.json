@@ -1,0 +1,237 @@
+{
+  "pdf": {
+    "title": "Docca Statement",
+    "subject": "Doccaq PDF Business Plan 17 Feb 2015 - 17 Mar 2015"
+  },
+  "supplier": {
+    "name": "Stark Industries",
+    "email": "tony@ironman.com",
+    "phone": "555 555 555 555",
+    "address": [
+      "200 Park Avenue",
+      "Manhattan, New York"
+    ],
+    "tax_id": "ABN: 321 432 543 654",
+    "logo": "logo.png"
+  },
+  "currency": "AUD",
+  "chargify": {
+    "customer": {
+      "email": "jason@lecstor.com"
+    },
+    "subscription": {
+      "product": {
+        "name": "Business Plan",
+        "product_family": {
+          "name": "Docca PDF"
+        }
+      }
+    },
+    "statement": {
+      "id": 98764321,
+      "closed_at": "2015-03-17T16:01:21+11:00",
+      "created_at": "2015-03-17T16:01:15+11:00",
+      "customer_billing_address": "P.O. Box 1234",
+      "customer_billing_address_2": "",
+      "customer_billing_city": "Metropolis",
+      "customer_billing_country": "AU",
+      "customer_billing_state": "Queensland",
+      "customer_billing_zip": "43210",
+      "customer_first_name": "Jason",
+      "customer_last_name": "Galea",
+      "customer_organization": "Lecstor Pty Ltd",
+      "customer_shipping_address": "P.O. Box 1234",
+      "customer_shipping_address_2": "",
+      "customer_shipping_city": "Metropolis",
+      "customer_shipping_country": "AU",
+      "customer_shipping_state": "Queensland",
+      "customer_shipping_zip": "43210",
+      "ending_balance_in_cents": 0,
+      "future_payments": [],
+      "memo": "Thanks for having us!",
+      "opened_at": "2015-02-17T16:01:19+11:00",
+      "settled_at": "2015-03-17T16:01:20+11:00",
+      "starting_balance_in_cents": 0,
+      "subscription_id": 7654321,
+      "updated_at": "2015-03-17T16:01:21+11:00",
+      "total_in_cents": 4400,
+      "transactions": [
+        {
+          "id": 987632121,
+          "subscription_id": 5432198,
+          "type": "Charge",
+          "kind": "baseline",
+          "transaction_type": "charge",
+          "success": true,
+          "amount_in_cents": 0,
+          "memo": "Business Plan (17 Mar 2015 - 17 Apr 2015)",
+          "created_at": "2015-03-17T16:01:14+11:00",
+          "starting_balance_in_cents": 0,
+          "ending_balance_in_cents": 0,
+          "gateway_used": null,
+          "gateway_transaction_id": null,
+          "gateway_order_id": null,
+          "payment_id": 6543219,
+          "product_id": 7654321,
+          "tax_id": null,
+          "component_id": null,
+          "statement_id": 98764321,
+          "customer_id": 7654321,
+          "original_amount_in_cents": null,
+          "discount_amount_in_cents": null,
+          "taxable_amount_in_cents": 0,
+          "taxations": []
+        },
+        {
+          "id": 76598765,
+          "subscription_id": 5432198,
+          "type": "Charge",
+          "kind": "quantity_based_component",
+          "transaction_type": "charge",
+          "success": true,
+          "amount_in_cents": 4000,
+          "memo": "User Seats: 8 users",
+          "created_at": "2015-03-17T16:01:14+11:00",
+          "starting_balance_in_cents": 0,
+          "ending_balance_in_cents": 4000,
+          "gateway_used": null,
+          "gateway_transaction_id": null,
+          "gateway_order_id": null,
+          "payment_id": 6543219,
+          "product_id": 7654321,
+          "tax_id": null,
+          "component_id": 54321,
+          "statement_id": 98764321,
+          "customer_id": 7654321,
+          "original_amount_in_cents": null,
+          "discount_amount_in_cents": null,
+          "taxable_amount_in_cents": 4000,
+          "taxations": [
+            {
+              "tax_id": 1778,
+              "tax_charge_id": 65476587,
+              "tax_name": "GST",
+              "rate": "0.1",
+              "tax_amount_in_cents": 400,
+              "tax_rules": [
+                {
+                  "tax_rule_id": 3591,
+                  "country_code": "AU",
+                  "subdivision_code": "",
+                  "rate": "0.1",
+                  "tax_amount_in_cents": 400,
+                  "description": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 65476587,
+          "subscription_id": 5432198,
+          "type": "Charge",
+          "kind": "tax",
+          "transaction_type": "charge",
+          "success": true,
+          "amount_in_cents": 400,
+          "memo": "Tax: GST",
+          "created_at": "2015-03-17T16:01:15+11:00",
+          "starting_balance_in_cents": 4000,
+          "ending_balance_in_cents": 4400,
+          "gateway_used": null,
+          "gateway_transaction_id": null,
+          "gateway_order_id": null,
+          "payment_id": 87654321,
+          "product_id": 7654321,
+          "tax_id": 1337,
+          "component_id": 54321,
+          "statement_id": 98764321,
+          "customer_id": 7654321,
+          "original_amount_in_cents": null,
+          "discount_amount_in_cents": null,
+          "taxable_amount_in_cents": null,
+          "taxations": []
+        },
+        {
+          "id": 6543219,
+          "subscription_id": 5432198,
+          "type": "Payment",
+          "kind": null,
+          "transaction_type": "payment",
+          "success": true,
+          "amount_in_cents": 4400,
+          "memo": "Jason Galea - Business Plan: Renewal payment",
+          "created_at": "2015-03-17T16:01:20+11:00",
+          "starting_balance_in_cents": 4400,
+          "ending_balance_in_cents": 0,
+          "gateway_used": "eway",
+          "gateway_transaction_id": "987654321",
+          "gateway_order_id": null,
+          "payment_id": null,
+          "product_id": 7654321,
+          "tax_id": null,
+          "component_id": null,
+          "statement_id": 98764321,
+          "customer_id": 7654321,
+          "card_number": "XXXX-XXXX-XXXX-3210",
+          "card_expiration": "03/2020",
+          "card_type": "mastercard"
+        }
+      ],
+      "events": [
+        {
+          "event": {
+            "id": 999995754,
+            "key": "renewal_success",
+            "message": "Successful renewal for Jason Galea's subscription to Business Plan",
+            "subscription_id": 5432198,
+            "created_at": "2015-02-17T16:01:19+11:00",
+            "event_specific_data": {
+              "product_id": 7654321,
+              "account_transaction_id": 84898345
+            }
+          }
+        },
+        {
+          "event": {
+            "id": 999995760,
+            "key": "payment_success",
+            "message": "Successful payment of $44.00 AUD for Jason Galea's subscription to Business Plan",
+            "subscription_id": 5432198,
+            "created_at": "2015-02-17T16:01:19+11:00",
+            "event_specific_data": {
+              "product_id": 7654321,
+              "account_transaction_id": 84898345
+            }
+          }
+        },
+        {
+          "event": {
+            "id": 999999598,
+            "key": "renewal_success",
+            "message": "Successful renewal for Jason Galea's subscription to Business Plan",
+            "subscription_id": 5432198,
+            "created_at": "2015-03-17T16:01:22+11:00",
+            "event_specific_data": {
+              "product_id": 7654321,
+              "account_transaction_id": 6543219
+            }
+          }
+        },
+        {
+          "event": {
+            "id": 999999603,
+            "key": "payment_success",
+            "message": "Successful payment of $44.00 AUD for Jason Galea's subscription to Business Plan",
+            "subscription_id": 5432198,
+            "created_at": "2015-03-17T16:01:22+11:00",
+            "event_specific_data": {
+              "product_id": 7654321,
+              "account_transaction_id": 6543219
+            }
+          }
+        }
+      ]
+    }
+  }
+}
