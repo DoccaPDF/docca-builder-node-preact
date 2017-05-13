@@ -5,10 +5,13 @@ import bunyan from 'bunyan';
 import Copin from 'copin';
 
 import initRoutes from './routes';
+import initTestRoutes from './routes/test-routes';
 
 const config = Copin();
 const apiUrl = config.get('docca.api_url').replace(/\/+$/, '');
 const apiKey = config.get('docca.api_key');
+
+console.log({ DOCCA_API_URL: process.env['DOCCA_API_URL'], apiUrl });
 
 const serverName = config.get('server.name');
 
@@ -29,5 +32,6 @@ app.use(requestLog.requestLogger());
 app.use(bodyParser.json({ limit: config.get('express.json_body_parser.limit') }));
 
 initRoutes({ app, log, apiUrl, apiKey });
+initTestRoutes({ app, log, apiUrl, apiKey });
 
 startExpress(app);
