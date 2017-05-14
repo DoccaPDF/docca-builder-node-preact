@@ -7,6 +7,7 @@ import { renderDocument } from '../docca-client';
 import Invoice from '../components/invoice';
 import MarkupReference from '../components/docca/markup-reference';
 import ChargifyStatement from '../components/chargify';
+import StripeInvoice from '../components/stripe';
 
 export default function initRoutes ({ app, log, apiUrl, apiKey, timeout }) {
   app.post('/invoice', (req, res) => {
@@ -25,6 +26,13 @@ export default function initRoutes ({ app, log, apiUrl, apiKey, timeout }) {
   app.post('/chargify-statement', (req, res) => {
     const data = req.body;
     const doc = render(<ChargifyStatement data={data} />);
+    const images = [fs.createReadStream(`./demo/images/logo.png`)];
+    renderDocument({ apiUrl, apiKey, doc, images, timeout, res });
+  });
+
+  app.post('/stripe-invoice', (req, res) => {
+    const data = req.body;
+    const doc = render(<StripeInvoice data={data} />);
     const images = [fs.createReadStream(`./demo/images/logo.png`)];
     renderDocument({ apiUrl, apiKey, doc, images, timeout, res });
   });

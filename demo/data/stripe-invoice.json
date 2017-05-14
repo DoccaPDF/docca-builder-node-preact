@@ -1,0 +1,135 @@
+{
+  "supplier": {
+    "name": "Stark Industries",
+    "email": "tony@ironman.com",
+    "phone": "555 555 555 555",
+    "address": [
+      "200 Park Avenue",
+      "Manhattan, New York"
+    ],
+    "tax_id": "ABN: 321 432 543 654",
+    "logo": "logo.png"
+  },
+  "currency": "USD",
+  "invoice": {
+    "id": "in_15kkGj2eZvKYlo2ChUKAUXNz",
+    "object": "invoice",
+    "amount_due": 1000,
+    "application_fee": null,
+    "attempt_count": 1,
+    "attempted": true,
+    "charge": "ch_15km242eZvKYlo2CimRI6rsA",
+    "closed": true,
+    "currency": "usd",
+    "customer": "cus_AedJmLnQXxc8OX",
+    "date": 1427412009,
+    "description": null,
+    "discount": null,
+    "ending_balance": 0,
+    "forgiven": false,
+    "lines": {
+      "data": [
+        {
+          "id": "sub_AHqpku1ywVSpkL",
+          "object": "line_item",
+          "amount": 665830,
+          "currency": "usd",
+          "description": "An invoice item",
+          "discountable": true,
+          "livemode": true,
+          "metadata": {
+          },
+          "period": {
+            "start": 1521039614,
+            "end": 1552575614
+          },
+          "plan": {
+            "id": "gold-classic-584",
+            "object": "plan",
+            "amount": 999,
+            "created": 1494754364,
+            "currency": "usd",
+            "interval": "month",
+            "interval_count": 1,
+            "livemode": false,
+            "metadata": {
+            },
+            "name": "Gold Classic",
+            "statement_descriptor": null,
+            "trial_period_days": null
+          },
+          "proration": false,
+          "quantity": 1,
+          "subscription": null,
+          "subscription_item": "si_19xH8E2eZvKYlo2CR1u1heAY",
+          "type": "subscription"
+        }
+      ],
+      "total_count": 1,
+      "object": "list",
+      "url": "/v1/invoices/in_15kkGj2eZvKYlo2ChUKAUXNz/lines"
+    },
+    "livemode": false,
+    "metadata": {
+      "invoice_number": "G304573"
+    },
+    "next_payment_attempt": null,
+    "paid": true,
+    "period_end": 1427410638,
+    "period_start": 1424991438,
+    "receipt_number": null,
+    "starting_balance": 0,
+    "statement_descriptor": null,
+    "subscription": "sub_3jtkr4OHgFoV5k",
+    "subtotal": 1000,
+    "tax": null,
+    "tax_percent": null,
+    "total": 1000,
+    "webhooks_delivered_at": 1427412010
+  },
+  "customer": {
+    "id": "cus_AedJmLnQXxc8OX",
+    "object": "customer",
+    "account_balance": 0,
+    "created": 1494758026,
+    "currency": "usd",
+    "default_source": null,
+    "delinquent": false,
+    "description": null,
+    "discount": null,
+    "email": null,
+    "livemode": false,
+    "metadata": {
+    },
+    "shipping": {
+      "address": {
+        "line1": "213 Sample St",
+        "line2": "",
+        "city": "Beverly Hills",
+        "state": "CA",
+        "postal_code": "90210",
+        "country": "US"
+      },
+      "name": "John Doe",
+      "phone": "555 555 555 555"
+    },
+    "sources": {
+      "object": "list",
+      "data": [
+
+      ],
+      "has_more": false,
+      "total_count": 0,
+      "url": "/v1/customers/cus_AedJmLnQXxc8OX/sources"
+    },
+    "subscriptions": {
+      "object": "list",
+      "data": [
+
+      ],
+      "has_more": false,
+      "total_count": 0,
+      "url": "/v1/customers/cus_AedJmLnQXxc8OX/subscriptions"
+    }
+  }
+}
