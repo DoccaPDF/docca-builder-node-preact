@@ -5,6 +5,7 @@ import bunyan from 'bunyan';
 import Copin from 'copin';
 
 import initRoutes from './routes';
+import stripeRoutes from './routes/stripe';
 import initTestRoutes from './routes/test-routes';
 
 const config = Copin();
@@ -30,6 +31,7 @@ app.use(requestLog.requestLogger());
 app.use(bodyParser.json({ limit: config.get('express.json_body_parser.limit') }));
 
 initRoutes({ app, log, apiUrl, apiKey });
+stripeRoutes({ app, log, apiUrl, apiKey });
 initTestRoutes({ app, log, apiUrl, apiKey });
 
 startExpress(app);

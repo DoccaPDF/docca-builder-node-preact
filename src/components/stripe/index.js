@@ -54,15 +54,20 @@ const Invoice = ({ style = defaultStyle, doc = {}, data }) => {
   items = formatItemAmounts({ formatter, items });
   const invoice = formatTotalsAmounts({ formatter, invoice: data.invoice });
 
-  const addressFields = ['line1', 'line2', 'city', 'state', 'postal_code', 'country'];
-  const shipAddress = data.customer.shipping.address;
-  const address = addressFields.reduce((result, field) => {
-    if (shipAddress[field]) {
-      result.push(shipAddress[field]);
+  let recipient = { email: data.customer.email };
+  if (data.customer.shipping) {
+    if (data.customer.shipping.address) {
+      const addressFields = ['line1', 'line2', 'city', 'state', 'postal_code', 'country'];
+      const shipAddress = data.customer.shipping.address;
+      recipient.address = addressFields.reduce((result, field) => {
+        if (shipAddress[field]) {
+          result.push(shipAddress[field]);
+        }
+        return result;
+      }, []);
     }
-    return result;
-  }, []);
-  const recipient = { address, attn: data.customer.shipping.name };
+    recipient.attn = data.customer.shipping.name;
+  }
 
   return (
     <doc size='A4' {...doc}>
@@ -72,7 +77,7 @@ const Invoice = ({ style = defaultStyle, doc = {}, data }) => {
         <row class='detail'>
           <Address title='Bill to' recipient={recipient} />
         </row>
-        <Items invoice={invoice} items={items} currency={data.currency} />
+        <Items invoice={invoice} items={items} currency={data.customer.currency} />
         <Final class='final' invoice={invoice} billTo={recipient.attn} paymentNote='Thanks!' />
         <Footer />
       </page>

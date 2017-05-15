@@ -4,4 +4,8 @@ server:
 docca:
   api_url: DOCCA_API_URL
   api_key: DOCCA_API_KEY
-
+stripe:
+  test:
+    api_key: STRIPE_TEST_API_KEY
+  live:
+    api_key: STRIPE_LIVE_API_KEY

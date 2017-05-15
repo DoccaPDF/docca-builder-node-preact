@@ -23,7 +23,8 @@
     "express": "^4.15.2",
     "lodash": "^4.17.4",
     "preact": "^8.1.0",
-    "request": "^2.81.0"
+    "request": "^2.81.0",
+    "stripe": "^4.19.0"
   },
   "babel": {
     "presets": [
@@ -61,7 +62,10 @@
   "jest": {
     "testEnvironment": "node",
     "verbose": true,
-    "testPathIgnorePatterns": [ "/node_modules/", "/dist/" ]
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
+    ]
   },
   "eslintConfig": {
     "parser": "babel-eslint",

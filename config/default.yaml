@@ -10,3 +10,18 @@ docca:
   api_url: https://api.docca.io
   api_key: apikey_replaceThisWithYourApiKey
 
+stripe:
+  test:
+    api_key: sk_test_replaceThisWithYourTestStripeApiKey
+  live:
+    api_key: sk_live_replaceThisWithYourLiveStripeApiKey
+
+supplier:
+  name: Stark Industries
+  email: tony@ironman.com
+  phone: 555 555 555 555
+  address:
+    - 200 Park Avenue,
+    - Manhattan, New York
+  tax_id: "ABN: 321 432 543 654"
+  logo: logo.png

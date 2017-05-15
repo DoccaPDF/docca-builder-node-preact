@@ -15,15 +15,33 @@ Fork and/or clone this repository to you local system.
 - Go to [docca.io](https://docca.io) and signup.
 - Go to "API Keys", enter a name for the key and generate it.
 
-#### local service setup
-
 In `config/default.yaml` set `docca.api_key` with your API key id.
+
+#### Run it natively
 
 Install [Yarn](https://yarnpkg.com/) and use it to install the service dependancies. Is Yarn. Is good.
 ```bash
 npm i -g yarn
 cd docca-builder
 yarn
+```
+
+Start in development mode
+
+```
+yarn start
+```
+
+Start in production mode
+```
+yarn run compile
+yarn run serve
+```
+
+#### Docker Compose
+```
+docker-compose build docca-builder
+docker-compose up -d docca-builder
 ```
 
 #### Demos
@@ -60,25 +78,36 @@ production, it's just here to demo images.
 
 They are, however, also a demonstration of how you can include images unique to
 a document when required.
+
+**A generic, single page invoice**
 ```
 curl --data "@./demo/data/invoice.json" \
   -H "Content-Type: application/json" \
   http://localhost:8765/invoice-demo-logo > invoice-logo-demo.pdf
 ```
+
+**A generic, multi-page invoice**
 ```
 curl --data "@./demo/data/invoice-long.json" \
   -H "Content-Type: application/json" \
   http://localhost:8765/invoice-demo-logo > invoice-long-demo.pdf
 ```
 
+**A Chargify Statement**
 ```
 curl --data "@./demo/data/chargify-statement.json" \
   -H "Content-Type: application/json" \
   http://localhost:8765/chargify-statement > chargify-statement.pdf
 ```
 
+**A Stripe Invoice**
 ```
 curl --data "@./demo/data/stripe-invoice.json" \
   -H "Content-Type: application/json" \
   http://localhost:8765/stripe-invoice > stripe-invoice.pdf
+```
+or.. configure your Stripe api key and..
+```
+curl http://localhost:8765/stripe/invoice/in_sTrIpEiNvOiCeId \
+  > stripe-invoice.pdf
 ```

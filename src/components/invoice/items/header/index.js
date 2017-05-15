@@ -5,7 +5,7 @@ import { h } from 'preact';
  */
 const InvoiceHeader = ({ className }) => (
   <header class={className}>
-    <p>Description</p>
+    <l>Description</l>
     <itemQ>Quantity</itemQ>
     <itemP>Price</itemP>
     <itemT>Total</itemT>
