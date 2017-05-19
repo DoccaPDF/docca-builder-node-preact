@@ -5,7 +5,7 @@ server:
   log_level: debug
 express:
   json_body_parser:
-    limit: 1mb
+    limit: 10mb
 docca:
   api_url: https://api.docca.io
   api_key: apikey_replaceThisWithYourApiKey
