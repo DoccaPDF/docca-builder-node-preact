@@ -120,8 +120,15 @@ curl --data "@./demo/data/stripe-invoice.json" \
   -H "Content-Type: application/json" \
   http://localhost:8765/stripe-invoice > stripe-invoice.pdf
 ```
+
+**A Stripe Invoice with Uploaded Data and Logo**
+```
+curl -F data=@demo/data/stripe-invoice.json \
+  -F image=@demo/images/logo.png \
+  http://localhost:8765/stripe-invoice-upload > stripe-invoice-upload.pdf
+```
+
 or.. configure your Stripe api key and..
 ```
-curl http://localhost:8765/stripe/invoice/in_sTrIpEiNvOiCeId \
-  > stripe-invoice.pdf
+curl http://localhost:8765/stripe/invoice/in_sTrIpEiNvOiCeId > stripe-invoice.pdf
 ```

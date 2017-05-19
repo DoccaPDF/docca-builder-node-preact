@@ -2,6 +2,7 @@ import fs from 'fs';
 import { h } from 'preact';
 
 import render from '../render';
+import { getImages, getData } from '../uploads';
 import { renderDocument } from '../docca-client';
 
 import Invoice from '../components/invoice';
@@ -9,7 +10,7 @@ import MarkupReference from '../components/docca/markup-reference';
 import ChargifyStatement from '../components/chargify';
 import StripeInvoice from '../components/stripe';
 
-export default function initRoutes ({ app, log, apiUrl, apiKey, timeout }) {
+export default function initRoutes ({ app, log, apiUrl, apiKey, timeout, upload }) {
   app.post('/invoice', (req, res) => {
     console.log({ body: req.body });
     const invoice = req.body.invoice;
@@ -35,6 +36,19 @@ export default function initRoutes ({ app, log, apiUrl, apiKey, timeout }) {
     const doc = render(<StripeInvoice data={data} />);
     const images = [fs.createReadStream(`./demo/images/logo.png`)];
     renderDocument({ apiUrl, apiKey, doc, images, timeout, res });
+  });
+
+  const uploads = upload.fields([
+    { name: 'image', maxCount: 20 },
+    { name: 'data', maxCount: 1 }
+  ]);
+  app.post('/stripe-invoice-upload', uploads, (req, res) => {
+    getData(req)
+    .then(data => {
+      const doc = render(<StripeInvoice data={data} />);
+      const images = getImages(req);
+      renderDocument({ apiUrl, apiKey, doc, images, timeout, res });
+    });
   });
 
   app.post('/invoice-demo-logo', (req, res) => {
