@@ -110,12 +110,6 @@ export default function renderToString (vnode, context, opts, inner, isSvgMode) 
       } else if ((v || v === 0 || v === '') && typeof v !== 'function') {
         if (v === true || v === '') {
           continue;
-          // v = name;
-          // // in non-xml mode, allow boolean attributes
-          // if (!opts || !opts.xml) {
-          //   s += ' ' + name;
-          //   continue;
-          // }
         }
         s += ` ${name}="${encodeEntities(v)}"`;
       }

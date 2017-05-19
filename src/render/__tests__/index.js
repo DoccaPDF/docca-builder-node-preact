@@ -9,6 +9,18 @@ describe('pain points', () => {
     expect(doc).toEqual(`<link href="http://blah">A Link</link>`);
   });
 
+  it('removes empty attributes', () => {
+    const Elem = () => (<elem attr='' />);
+    const doc = render(<Elem />, null);
+    expect(doc).toEqual(`<elem></elem>`);
+  });
+
+  it('removes naked attributes', () => {
+    const Elem = () => (<elem attr />);
+    const doc = render(<Elem />, null);
+    expect(doc).toEqual(`<elem></elem>`);
+  });
+
   // can't fix this here, would have to modify h in preact
   // it.('leaves a space', () => {
   //   const Test = () => (
