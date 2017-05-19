@@ -1,9 +1,23 @@
 Docca Builder
 -------------
 
-Docca Builder is a customer-side server that builds Docca markup documents with submitted data using [Preact](https://preactjs.com/) and converts them to PDF using the Docca server. Preact allows us to break our document into reusable components and apply logic in a really flexible way. This is just one way of generating Docca markup though, just about any templating system you prefer could do the job too.
+Docca Builder is a server that you can run on-site and use to generate PDF files customised to your needs.
 
-Requirements:
+You design templates for the PDF documents you need to generate then post data and images to Docca Builder. Builder renders a Docca document from the template and data, sends it to the Docca server, and returns the resulting PDF document as the response.
+
+[Preact](https://preactjs.com/) is used as the document renderer allowing complex templates to be easily built and maintained. Preact allows you to break your document into reusable components and apply logic using Javascript wherever necessary.
+
+The documents that Builder send to the Docca server are never stored by the Docca server. Images unique to a document are saved to disk while the PDF is being generated and are then deleted.
+
+Docca Builder includes example templates, endpoints, and helper functions which you can use to create a solution that's perfect for your requirements.
+
+- format timestamps as readable strings
+- format currency amounts
+- request data from remote sources
+- include images unique to the document being generated
+- include common images stored on the Docca server
+
+**Requirements:**
 
 - a Docca API key
 - [Node](https://nodejs.org/)
@@ -38,13 +52,13 @@ yarn run compile
 yarn run serve
 ```
 
-#### Docker Compose
+#### Run it with Docker
 ```
 docker-compose build docca-builder
 docker-compose up -d docca-builder
 ```
 
-#### Demos
+#### Example Templates
 
 This first demo uses the endpoint you would use in production.
 
