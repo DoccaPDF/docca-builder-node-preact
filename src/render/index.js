@@ -109,12 +109,13 @@ export default function renderToString (vnode, context, opts, inner, isSvgMode) 
         html = v && v.__html;
       } else if ((v || v === 0 || v === '') && typeof v !== 'function') {
         if (v === true || v === '') {
-          v = name;
-          // in non-xml mode, allow boolean attributes
-          if (!opts || !opts.xml) {
-            s += ' ' + name;
-            continue;
-          }
+          continue;
+          // v = name;
+          // // in non-xml mode, allow boolean attributes
+          // if (!opts || !opts.xml) {
+          //   s += ' ' + name;
+          //   continue;
+          // }
         }
         s += ` ${name}="${encodeEntities(v)}"`;
       }
