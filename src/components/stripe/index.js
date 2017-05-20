@@ -77,8 +77,9 @@ const Invoice = ({ style = defaultStyle, doc = {}, data }) => {
         <row class='detail'>
           <Address title='Bill to' recipient={recipient} />
         </row>
-        <Items invoice={invoice} items={items} currency={data.customer.currency} />
-        <Final class='final' invoice={invoice} billTo={recipient.attn} paymentNote='Thanks!' />
+        <Items invoice={invoice} items={items} currency={data.currency} />
+        <Final class='final' invoice={invoice} currency={data.currency}
+          billTo={recipient.attn} paymentNote='Thanks!' />
         <Footer />
       </page>
     </doc>
